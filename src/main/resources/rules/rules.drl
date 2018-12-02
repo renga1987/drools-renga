@@ -1,0 +1,35 @@
+package rules
+ 
+import com.javainuse.model.Product
+rule "For OrderType Metro-e solutionType TC"
+	when 
+		productObject: Product(solType=="Metro-e",orderType=="TC")
+	then
+		productObject.setWeightAge(1);
+		productObject.setJobType("jobType1");
+		productObject.setEstimationPoint("14");
+	end
+rule "OrderType PRI solutionType TC"
+	when 
+		productObject: Product(solType=="PRI",orderType=="TC")
+	then
+		productObject.setWeightAge(2);
+		productObject.setJobType("jobType2");
+		productObject.setEstimationPoint("24");
+	end
+rule "OrderType SIP solutionType TC"
+	when 
+		productObject: Product(solType=="SIP",orderType=="TC")
+	then
+		productObject.setWeightAge(3);
+		productObject.setJobType("jobType3");
+		productObject.setEstimationPoint("34");
+	end
+rule "OrderType BI solutionType TC"
+	when 
+		productObject: Product(solType=="BI",orderType=="TC")
+	then
+		productObject.setWeightAge(4);
+		productObject.setJobType("jobType4");
+		productObject.setEstimationPoint("64");
+	end
